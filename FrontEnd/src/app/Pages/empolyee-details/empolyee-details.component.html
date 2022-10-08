@@ -1,0 +1,93 @@
+<h1 mat-dialog-title>Empolyee Details</h1>
+<table class="table" mat-dialog-content>
+ <tbody>
+  <tr>
+    <th>first Name</th>
+    <td>{{data.firstName}}</td>
+  </tr>
+  <tr>
+    <th>last Name</th>
+    <td>{{data.lastName}}</td>
+  </tr>
+  <tr>
+    <th>email</th>
+    <td>{{data.email}}</td>
+  </tr>
+  <tr>
+    <th>mobile Phone</th>
+    <td>{{data.mobilePhone}}</td>
+  </tr>
+  <tr>
+    <th>address</th>
+    <td>{{data.address}}</td>
+  </tr>
+  <tr>
+    <th>position</th>
+    <td>{{data.position}}</td>
+  </tr>
+  <tr>
+    <th>age</th>
+    <td>{{data.age}}</td>
+  </tr>
+  <tr>
+    <th>gender</th>
+    <td>{{gender[data.gender]}}</td>
+  </tr>
+  <tr>
+    <th>marital Status</th>
+    <td>{{MaritalStatus[data.maritalStatus]}}</td>
+  </tr>
+  <tr>
+    <th>birthDate</th>
+    <td>{{data.birthDate | date : 'yyyy-MM-dd' }}</td>
+  </tr>
+  <tr>
+    <th>experience Year</th>
+    <td>{{data.experienceYear }}</td>
+  </tr>
+  <tr>
+    <th>hiring Date</th>
+    <td>{{data.hiringDate | date : 'yyyy-MM-dd' }}</td>
+  </tr>
+  <tr>
+    <th>military Status</th>
+    <td>{{MilitaryStatus[data.militaryStatus] }}</td>
+  </tr>
+  <tr>
+    <th>creation Date</th>
+    <td>{{data.creationDate | date : 'yyyy-MM-dd' }}</td>
+  </tr>
+  <tr>
+    <th>createdBy</th>
+    <td>{{data.createdBy}}</td>
+  </tr>
+  <tr>
+    <th>updated Date</th>
+    <td>{{data.updatedDate | date : 'yyyy-MM-dd' }}</td>
+  </tr>
+  <tr>
+    <th>updatedBy</th>
+    <td>{{data.updatedBy}}</td>
+  </tr>
+  <tr>
+    <th>deletion Date</th>
+    <td>{{data.deletionDate | date : 'yyyy-MM-dd' }}</td>
+  </tr>
+  <tr>
+    <th>deletedBy</th>
+    <td>{{data.deletedBy}}</td>
+  </tr>
+  <tr>
+    <th>isDeleted ?</th>
+    <td>
+      <span *ngIf="data.isDeleted == true">Yes</span>
+      <span *ngIf="data.isDeleted == false">No</span>
+    </td>
+  </tr>
+ </tbody>
+</table>
+
+<div mat-dialog-actions>
+
+  <button mat-raised-button color="primary" mat-dialog-close cdkFocusInitial>Ok</button>
+</div>

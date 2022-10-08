@@ -1,0 +1,41 @@
+<div>
+  <button mat-button (click)="logout()"> Logout</button>
+</div>
+<mat-card>
+  <mat-card-header>
+     <mat-card-title>Dashboard
+     </mat-card-title>
+     <button id="add" mat-raised-button color="primary" style="float:right ;" [routerLink]="['/addEmpolyee']"><mat-icon>person_add</mat-icon>Add</button>
+  </mat-card-header>
+  <mat-card-content>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>first Name</th>
+          <th>last Name</th>
+          <th>email</th>
+          <th>mobile Phone</th>
+          <th>position</th>
+          <th>More</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of data">
+        <tr *ngIf="item.isDeleted == false" >
+          <td>{{item.firstName}}</td>
+          <td>{{item.lastName}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.mobilePhone}}</td>
+          <td>{{item.position}}</td>
+          <td>
+            <button mat-button [matMenuTriggerFor]="menu"><mat-icon>arrow_drop_down</mat-icon></button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="details(item.id)"><mat-icon>person</mat-icon> Details</button>
+              <button mat-menu-item (click)="Update(item.id)"><mat-icon>edit</mat-icon> Edit</button>
+              <button mat-menu-item (click)="Delete(item.id)"><mat-icon>delete</mat-icon> Delete</button>
+            </mat-menu>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>

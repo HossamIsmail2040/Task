@@ -1,0 +1,24 @@
+@import "assets/scss/material.variables";
+@import "assets/scss/mixins/bi-app/bi-app-ltr";
+@import "assets/scss/app.variables";
+@import "assets/scss/mixins";
+@import "assets/scss/core";
+@import "assets/scss/material";
+//@import "assets/scss/components";
+@import "assets/scss/utilities/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400&display=swap');
+*{
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+mat-icon
+{
+  cursor: pointer;
+}
+
+
+body
+{
+  background-color: beige;
+}
+

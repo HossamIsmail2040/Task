@@ -1,0 +1,124 @@
+<form (ngSubmit)="save()" >
+  <mat-card>
+    <mat-card-header>
+        <mat-card-title>Add New Empolyee</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <table class="table borderless">
+          <tbody>
+             <tr>
+               <td>
+                <mat-form-field class="example-form-field">
+                  <mat-label>First Name</mat-label>
+                  <input matInput type="text" name="firstName" [(ngModel)]="form.firstName">
+                </mat-form-field>
+               </td>
+               <td>
+                <mat-form-field class="example-form-field">
+                  <mat-label>Last Name</mat-label>
+                  <input matInput type="text" name="lastName" [(ngModel)]="form.lastName">
+                </mat-form-field>
+               </td>
+               <td>
+                <mat-form-field class="example-form-field">
+                  <mat-label>Email</mat-label>
+                  <input matInput type="email" name="email" [(ngModel)]="form.email">
+                </mat-form-field>
+               </td>
+             </tr>
+             <tr>
+              <td>
+               <mat-form-field class="example-form-field">
+                 <mat-label>Address</mat-label>
+                 <input matInput type="text" name="address" [(ngModel)]="form.address">
+               </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-form-field">
+                  <mat-label>Age</mat-label>
+                  <input matInput type="number" name="age" [(ngModel)]="form.age">
+                </mat-form-field>
+               </td>
+               <td>
+                <mat-form-field class="example-form-field">
+                  <mat-label>BirthDate</mat-label>
+                  <input matInput [matDatepicker]="picker" [(ngModel)]="form.birthDate" name="birthDate">
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+               </td>
+             </tr>
+
+             <tr>
+              <td>
+                <mat-form-field class="example-form-field">
+                  <mat-label>Experience Year</mat-label>
+                  <input matInput type="number" name="experienceYear" [(ngModel)]="form.experienceYear">
+                </mat-form-field>
+               </td>
+               <td>
+                 <mat-form-field class="example-form-field">
+                   <mat-label>Position</mat-label>
+                   <input matInput type="text" name="position" [(ngModel)]="form.position">
+                 </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="example-form-field">
+                    <mat-label>Gender</mat-label>
+                    <mat-select (selectionChange)="selectGender($event)">
+
+                           <mat-option *ngFor="let item of gender | keyvalue" [value]=item.key>{{item.value}}</mat-option>
+
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+             </tr>
+             <tr>
+             <td>
+                  <mat-form-field class="example-form-field">
+                    <mat-label>marital Status</mat-label>
+                    <mat-select (selectionChange)="selectmatiral($event)">
+
+                           <mat-option *ngFor="let item of MaritalStatus | keyvalue" [value]=item.key>{{item.value}}</mat-option>
+
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="example-form-field">
+                    <mat-label>Malitary Status</mat-label>
+                    <mat-select (selectionChange)="selectmilitary($event)">
+
+                           <mat-option *ngFor="let item of MilitaryStatus | keyvalue" [value]=item.key >{{item.value}}</mat-option>
+
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="example-form-field">
+                    <mat-label>hiringDate</mat-label>
+                    <input matInput [matDatepicker]="picker1" [(ngModel)]="form.hiringDate" name="hiringDate">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+                 </td>
+             </tr>
+             <tr>
+              <mat-form-field class="example-form-field">
+                <mat-label>Phone</mat-label>
+                <input matInput type="text" name="mobilePhone" [(ngModel)]="form.mobilePhone">
+              </mat-form-field>
+            </tr>
+          </tbody>
+        </table>
+    </mat-card-content>
+    <mat-card-footer style="text-align:center ; justify-content:center ;">
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Save</button>
+        </mat-card-actions>
+    </mat-card-footer>
+ </mat-card>
+
+</form>
